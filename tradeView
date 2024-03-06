@@ -1,0 +1,22 @@
+#import alpaca_trade_api as tradeapi
+#api = tradeapi. REST(
+#key_id=' PKO5V9N2SMTZZZVLJLXU',
+#secret_key=' bK07pQBjCFgGcn/0g0v7yLV002gGyR4eFVgWVsNj',
+#base_url='https://paper-api.alpaca.markets'
+#)
+#
+from alpaca.data.historical import StockHistoricalDataClient
+from alpaca.data.requests import StockBarsRequest
+from alpaca.data.timeframe import TimeFrame
+
+client = StockHistoricalDataClient()
+
+request_params = StockBarsRequest(
+                        symbol_or_symbols=["GOOGL"],
+                        timeframe=TimeFrame.Day,
+                        start="2022-07-01"
+                 )
+
+bars = client.get_crypto_bars(request_params)
+
+
